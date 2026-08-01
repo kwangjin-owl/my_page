@@ -10,7 +10,6 @@
 <meta property="og:type" content="website" />
 
 <!-- ═══════════════════════════════════════════════════════════
-     · 포트폴리오 PDF : repo의 portfolio.pdf 와 연결됨 (08 마무리 버튼)
      · 이메일 kwangjin.owl@gmail.com / GitHub 링크 반영 완료
      · 회사명은 A~E 가명. 공개할 때는 .node-org 의 '회사 X' 부분만 실제 사명으로 교체
      · 연봉 정보는 공개 페이지에 넣지 않았습니다
@@ -338,6 +337,12 @@ footer{
   .reveal{ opacity:1; transform:none; }
   .circled path{ animation:none; stroke-dashoffset:0; }
 }
+
+/* 가독성: 꼬리줄 방지 · 제목 폭 제한 · 좁은 화면에서 강제 줄바꿈 해제 */
+.band-head h2{ max-width:820px; text-wrap:balance; }
+.hero h1{ text-wrap:balance; }
+.hero-lede, .band-head p, .skill p, .node p, .case-step p, .work p{ text-wrap:pretty; }
+@media (max-width:820px){ .hero h1 br, .band-head h2 br{ display:none; } }
 </style>
 </head>
 
@@ -375,9 +380,8 @@ footer{
     </h1>
 
     <p class="hero-lede">
-      초등 수학을 중심으로 디지털 교육 콘텐츠를 기획해 왔습니다.
-      콘텐츠 하나를 잘 만드는 일에서 시작해, 그것을 어디에 두고
-      어떻게 관리할지까지 함께 정하는 쪽으로 다루는 범위가 넓어졌습니다.
+      디지털 교육 콘텐츠를 기획해 왔습니다. 초등 수학에서 시작했고, 콘텐츠 하나를 잘 만드는 일에서
+      그것을 어디에 두고 어떻게 관리할지까지 함께 정하는 쪽으로 다루는 범위가 넓어졌습니다.
       <br /><br />
       최근에는 <span class="node-mark">AI 프로덕트 매니저 과정</span>을 밟으며
       기획한 것이 제품이 되는 과정을 익히고 있습니다.
@@ -394,7 +398,7 @@ footer{
   <!-- 숫자 -->
   <section class="shell figures reveal" aria-label="주요 숫자">
     <div class="fig"><span class="fig-n">10<em>년</em></span><span class="fig-l">교육 콘텐츠 기획·검수</span></div>
-    <div class="fig"><span class="fig-n">680<em>개</em></span><span class="fig-l">직접 정의한 지식 개념 코드</span></div>
+    <div class="fig"><span class="fig-n">680<em>개</em></span><span class="fig-l">선후행으로 엮어 정의한 지식 개념 코드</span></div>
     <div class="fig"><span class="fig-n">252<em>차시</em></span><span class="fig-l">AI 디지털교과서 3~4학년 전 차시 설계·개발</span></div>
     <div class="fig"><span class="fig-n">95<em>%</em></span><span class="fig-l">데이터로 설계한 보완 콘텐츠의 복습률</span></div>
   </section>
@@ -436,7 +440,7 @@ footer{
     <div class="band-head reveal">
       <span class="eyebrow">02 — Path</span>
       <h2>콘텐츠를 만들다가,<br />콘텐츠가 놓이는 구조를 만들게 됐습니다.</h2>
-      <p>교재와 문항에서 시작해 메타데이터와 문제은행, 지식 개념맵, 학습 서비스의 모듈 구조로 다루는 단위가 커졌습니다. 2025년에 두 번 겪은 사업 종료는 AI 디지털교과서 정책이 바뀌며 관련 조직이 개편된 일과 겹칩니다.</p>
+      <p>교재와 문항에서 시작해 메타데이터와 문제은행, 지식 개념맵, 학습 서비스의 모듈 구조로 이어졌습니다. 2025년에 두 번 겪은 사업 종료는 AI 디지털교과서 정책이 바뀌며 관련 조직이 개편된 일과 겹칩니다.</p>
     </div>
 
     <div class="tree reveal">
@@ -444,11 +448,11 @@ footer{
       <div class="node">
         <span class="node-yr">2016 — 2017</span>
         <div class="node-span"><span class="node-bar" style="width:31%"></span><span class="node-mo">1년 4개월</span></div>
-        <h3 class="node-role">융합 교육 콘텐츠 기획</h3>
+        <h3 class="node-role">체험 교육 콘텐츠 기획</h3>
         <span class="node-org">회사 A · 교육 콘텐츠 기업 · 콘텐츠 개발팀 · 연구원</span>
-        <p class="node-body">수학만이 아니라 과학과 코딩까지 다루며 체험형 콘텐츠 약 40개를 만들고, 그것을 초·중등 학생 앞에서 직접 강의했습니다. 만든 사람이 곧 가르치는 사람이라 어디서 막히는지가 그 자리에서 보였고, 보고 고치는 일을 반복하면서 <span class="node-mark">배우는 사람의 입장에서 먼저 생각하는 습관</span>이 생겼습니다.</p>
+        <p class="node-body">수학만이 아니라 과학과 코딩까지 다루며 체험형 콘텐츠 약 40개를 다시 만들고, 그것을 초·중등 학생 앞에서 강의했습니다. 만든 사람이 곧 가르치는 사람이라 어디서 막히는지가 그 자리에서 보였고, 보고 고치는 일을 반복하면서 <span class="node-mark">배우는 사람의 입장에서 먼저 생각하는 습관</span>이 생겼습니다.</p>
         <ul class="node-wins">
-          <li>SW 교육 교재 7권 기획 및 ISBN 등록, 출판사·현직 교사와 협업</li>
+          <li>SW 교육 교재 6권 개발 및 ISBN 등록, 출판사·현직 교사와 협업</li>
           <li>교사연구회 전시회 시연 운영으로 현장 피드백 수집·반영</li>
         </ul>
       </div>
@@ -458,11 +462,11 @@ footer{
         <div class="node-span"><span class="node-bar" style="width:100%"></span><span class="node-mo">4년 3개월</span></div>
         <h3 class="node-role">학습 플랫폼 콘텐츠 기획 · 운영</h3>
         <span class="node-org">회사 B · 초등 학습 플랫폼 기업 · 콘텐츠 기획실 수학팀 · 대리</span>
-        <p class="node-body">초등 전 학년 콘텐츠를 개념부터 평가까지 이어지는 흐름으로 구성하고, 문제은행에 문항을 쌓으며 운영했습니다. 이때 <span class="node-mark">메타데이터 항목을 나중에 분석할 수 있을 만큼 잘게 나눠 두는 일</span>이 따로 필요하다는 것을 알게 됐습니다. 쌓인 뒤에 다시 나누는 건 훨씬 어렵기 때문입니다.</p>
+        <p class="node-body">초등 전 학년 콘텐츠를 개념부터 평가까지 이어지는 흐름으로 구성하고, 문제은행에 문항을 쌓으며 운영했습니다. 이때 <span class="node-mark">메타데이터 항목을 나중에 분석할 수 있을 만큼 잘게 나눠 두는 일</span>이 따로 필요하다는 것을 알게 됐습니다. 쌓인 뒤에 다시 나누는 건 훨씬 어렵기 때문입니다. 국정 교과서였던 때라 학습 순서가 하나였고, 매년 나오는 수시개정 내용만 대조해 이미 만든 콘텐츠를 고쳐 나가면 됐습니다.</p>
         <ul class="node-wins">
-          <li>문항 기준 Q&amp;A DB와 응대 프로세스 표준화 — 응답 시간 단축, 반복 문의 감소</li>
+          <li>문항 기준 Q&amp;A DB 구축 — 모범 답안·이미지를 구조화해 팀 공유 자료로 운영</li>
           <li>애니메이션·챗봇·게임 등 신규 콘텐츠 기획 및 기존 콘텐츠 리뉴얼</li>
-          <li>외부 연산 학습 앱 검수·보완 후 영어 버전 제작해 서비스에 탑재</li>
+          <li>외부 연산 학습 앱 검수·보완, 영어 버전 번역 검수 후 서비스에 탑재</li>
         </ul>
       </div>
 
@@ -471,10 +475,10 @@ footer{
         <div class="node-span"><span class="node-bar" style="width:86%"></span><span class="node-mo">3년 8개월</span></div>
         <h3 class="node-role">AI 디지털교과서 · 지식맵 설계</h3>
         <span class="node-org">회사 C · 대형 에듀테크 기업 · 디지털교과서 개발실 / 학습개발실 · 책임연구원</span>
-        <p class="node-body">같은 회사에서 학습 플랫폼 콘텐츠를 맡다가 교과서 개발로 옮기면서, 다루는 단위가 콘텐츠에서 구조로 커졌습니다. 평가 데이터에서 난이도와 정답률이 어긋나는 지점을 찾아 문항을 교체했고, 학습 내용 자체가 어려운 영역은 보완 콘텐츠로 새로 기획했습니다. 매번 개별로 고치는 대신 개념을 선후행으로 엮어 두려고 <span class="node-mark">초등 전 과정 수학 지식 개념맵</span>을 직접 설계한 것도 이 시기입니다.</p>
+        <p class="node-body">같은 회사에서 학습 플랫폼 콘텐츠를 맡다가 교과서 개발로 옮겼습니다. 평가 데이터에서 난이도와 정답률이 어긋나는 지점을 찾아 문항을 교체했고, 학습 내용 자체가 어려운 영역은 보완 콘텐츠로 새로 기획했습니다. 매번 개별로 고치는 대신 개념을 선후행으로 엮어 두려고 <span class="node-mark">초등 전 과정 수학 지식 개념맵</span>을 설계한 것도 이 시기입니다.</p>
         <ul class="node-wins">
           <li>3~4학년 252차시 설계·개발</li>
-          <li>5~6학년 수학 개념 153차시 원고 집필</li>
+          <li>5~6학년 수학 개념 153차시 원고 발주 · 검수</li>
           <li>플랫폼 내 검정 교과서 10종 대응 콘텐츠 개발</li>
         </ul>
       </div>
@@ -484,10 +488,10 @@ footer{
         <div class="node-span"><span class="node-bar" style="width:16%"></span><span class="node-mo">8개월</span></div>
         <h3 class="node-role">특수교육 AI 디지털교과서 커리큘럼</h3>
         <span class="node-org">회사 D · 글로벌 에듀테크 기업 · 개발2본부 · 수학 커리큘럼 디자이너</span>
-        <p class="node-body">특수교육 대상 학습자를 맡으면서 <span class="node-mark">접근성과 인지 부담이 커리큘럼을 정하는 기준</span>이 됐습니다. 이미 정리되어 있던 표준분류체계도 그대로는 쓸 수 없어 제품 구조에 맞게 다시 묶었습니다. 필요한 도구는 직접 만들어 쓰면서, 그렇게 번 시간을 출시 전 전수 점검에 썼습니다.</p>
+        <p class="node-body">특수교육 대상 학습자를 맡으면서 <span class="node-mark">접근성과 인지 부담이 커리큘럼을 정하는 기준</span>이 됐습니다. 이미 정리되어 있던 표준분류체계도 그대로는 쓸 수 없어 제품 구조에 맞게 다시 묶었습니다. 필요한 도구는 만들어 쓰면서, 그렇게 번 시간을 출시 전 전수 점검에 썼습니다.</p>
         <ul class="node-wins">
           <li>대단원 14 · 소단원 35 · 스테이지 326 설계, 380문항 개발</li>
-          <li>기존 수학 학습 앱 커리큘럼 개편 — 미션 구조 재설계, 신규 액티비티 3종 추가</li>
+          <li>기존 수학 학습 앱 커리큘럼 보완·개편, 신규 액티비티 추가</li>
         </ul>
       </div>
 
@@ -500,6 +504,7 @@ footer{
         <ul class="node-wins">
           <li>퀴즈 · 쪽지 시험 · 자유 양식 모듈의 개발 요청서 · 디자인 요청서 작성</li>
           <li>단답형 답안을 표기가 아닌 의미 기준으로 채점하도록 기준 설계 및 채점 프롬프트 작성</li>
+          <li>코스 자동 구성에서 사람이 미리 정할 값과 LLM이 실행 시점에 정할 값의 범위를 팀과 정리</li>
         </ul>
       </div>
 
@@ -508,7 +513,7 @@ footer{
         <div class="node-span"><span class="node-bar dash" style="width:40%"></span><span class="node-mo">진행 중</span></div>
         <h3 class="node-role">AI 프로덕트 매니저</h3>
         <span class="node-org">멀티캠퍼스 AI.M 1기 · AI 프로덕트 매니저 트랙</span>
-        <p class="node-body">AI 모델과 API로 웹·앱 서비스를 직접 만들어 보고 있습니다. 그동안 필요할 때마다 익혀 쓴 것들을 정리하고, 검수와 데이터 관리 경험을 제품 환경에서 어떻게 쓸지 찾는 것이 목표입니다.</p>
+        <p class="node-body">Python과 웹·API 기초에서 시작해 LLM 활용, 서비스 기획과 출시 전략으로 이어지는 920시간 과정을 밟고 있습니다. 그동안 필요할 때마다 익혀 쓴 것들을 순서를 갖춰 정리하고, 검수와 데이터 관리 경험을 제품 환경에서 어떻게 쓸지 찾는 것이 목표입니다.</p>
       </div>
     </div>
   </section>
@@ -581,7 +586,7 @@ footer{
         <div class="case-k">03 설계</div>
         <div class="case-b">
           <h3>학습 순서를 게임 진행 순서로 옮김</h3>
-          <p>문항 스테이지 18개 · 그룹 스테이지 8개 · 단원 스테이지 3개의 3계층으로 나누고, 앞 단계를 마쳐야 다음이 열리도록 잠갔습니다. 게임 유형도 목적에 따라 갈랐습니다. 전략적 판단이 필요한 타워 디펜스형과, 빠르고 정확하게 많이 푸는 레이싱형을 다르게 배치했습니다. 타워의 데미지와 사거리, 적의 속도와 체력 같은 수치도 직접 계산해 개발사에 넘겼습니다.</p>
+          <p>문항 스테이지 18개 · 그룹 스테이지 8개 · 단원 스테이지 3개, 모두 29개를 3계층으로 나누고 앞 단계를 마쳐야 다음이 열리도록 잠갔습니다. 게임 유형도 목적에 따라 갈랐습니다. 전략적 판단이 필요한 디펜스 게임과, 빠르고 정확하게 많이 푸는 광부 게임을 다르게 배치했습니다. 여기에 스테이지 진행과 별개로 돌아가는 랭킹 게임을 하나 더 두어, 다 푼 뒤에도 계속 들어올 이유를 만들었습니다. 타워의 데미지와 사거리, 적의 속도와 체력 같은 수치도 계산해 개발사에 넘겼습니다.</p>
         </div>
       </div>
 
@@ -629,9 +634,9 @@ footer{
       <article class="work reveal">
         <div>
           <span class="eyebrow">지식 구조 설계 · 추천 로직</span>
-          <h3>수학 지식 개념맵과 개인화 학습 추천</h3>
-          <p>학년별로 흩어져 있던 수학 개념을 선후행 관계로 연결해 계통도로 그리고, 개념마다 코드를 부여한 뒤 표로 정리했습니다. 검정 교과서 10종의 편차를 하나의 체계 안에서 다룰 수 있게 했습니다.</p>
-          <p style="margin-top:12px;">이 구조 위에 학습자가 자기 위치를 보고 다음을 고르는 화면을 설계했습니다. 단원 성취도를 세 구간으로 나눠 <b style="color:var(--ink);font-weight:600;">부족하면 이전 단원으로, 보통이면 현재 단원을, 충분하면 다음 단원으로</b> 이어지도록 추천 규칙을 정했고, 학습 이력 유무와 진행 상태를 색으로 구분해 부족한 곳이 한눈에 보이게 했습니다. 고정된 진도가 아니라 성취 수준에 맞는 단원을 직접 고르는 방식입니다.</p>
+          <h3>단원 단위 학습 추천에서 개념 단위 지식맵으로</h3>
+          <p>먼저 단원 단위로 시작했습니다. 5개 영역 71개 단원을 선후행으로 잇고, 단원 성취도를 세 구간으로 나눠 <b style="color:var(--ink);font-weight:600;">부족하면 이전 단원으로, 보통이면 현재 단원을, 충분하면 다음 단원으로</b> 이어지도록 추천 규칙을 정했습니다. 학습 이력과 진행 상태를 색으로 구분해 부족한 곳이 한눈에 보이게 했고, 고정된 진도가 아니라 성취 수준에 맞는 단원을 직접 고르는 방식입니다.</p>
+          <p style="margin-top:12px;">단원 단위로는 여기까지였습니다. 국정 교과서일 때는 단원 안의 차시 순서를 모두가 그대로 따라가면 됐지만, 검정으로 바뀌자 교과서마다 구성이 달라졌습니다. 단원 순서를 바꾸는 일 자체는 콘텐츠가 모두 단원 안에 들어 있어 어렵지 않았습니다. 어려운 쪽은 국정 차시에 맞춰 이미 만들어져 있던 것들이었습니다. 그래서 단원과 차시를 분해해 차시 안의 주요 개념까지 나눈 뒤 선후행으로 엮고, 개념마다 코드를 부여해 서비스 중인 콘텐츠 전체에 매칭했습니다. 새로 들어온 개념과 차시처럼 기존 콘텐츠로 메워지지 않는 자리는 새로 만들어 채웠습니다.</p>
         </div>
         <div class="work-meta">
           <dl>
@@ -648,7 +653,7 @@ footer{
           <span class="eyebrow">업무 자동화</span>
           <h3>제작 · 검수 자동화 도구</h3>
           <p>문항 템플릿에 문제 유형과 번호, 난이도, 표준분류체계를 칸으로 나누고, 커리큘럼과 지도서를 함께 넣어 문항 초안을 대량으로 뽑았습니다. 템플릿에 채워진 값은 스크립트로 문항 메타데이터에 그대로 옮겨지도록 만들어, 초안을 뽑는 일과 메타를 입력하는 일을 하나로 이었습니다.</p>
-          <p>필요한 도구는 직접 만들어 썼습니다. 받아올림 횟수나 자릿수 같은 조건을 정해 연산 문항을 뽑는 생성기로 단계별 스테이지를 구성했고, 파일명과 이미지를 대조하는 도구로 검수에 걸리던 시간을 줄였습니다. 처음에는 서버가 있어야 돌아갔는데, 파일 하나만 복사하면 누구나 쓸 수 있도록 고쳤습니다. 도구를 쓰는 것보다, 어디를 자동화해야 검수에 쓸 시간이 남는지 고르는 게 중요했습니다.</p>
+          <p>필요한 도구는 만들어 썼습니다. 연산 문항 생성기는 사칙연산과 수 범위에 더해 받아올림·받아내림 횟수를 1~5회로 지정하고 빈칸 자리를 앞·뒤·정답 중에 고르게 해서, 조건을 조금씩 바꿔 단계별 스테이지를 채웠습니다. 이미지 매칭 도구는 파일명·유사도·순차 세 방식을 두어 이름 규칙이 무너진 자료도 대조할 수 있게 했습니다. 처음에는 서버가 있어야 돌아갔는데, 파일 하나만 복사하면 누구나 쓸 수 있도록 고쳤습니다. 도구를 쓰는 것보다, 어디를 자동화해야 검수에 쓸 시간이 남는지 고르는 게 중요했습니다.</p>
         </div>
         <div class="work-meta">
           <dl>
@@ -671,7 +676,7 @@ footer{
       <section>
         <h3>교재 · 출판</h3>
         <ul>
-          <li>초등 학습 교재 12권, 학원용 수학 교재 24권 기획</li>
+          <li>초등 학습 교재 12권, 학원용 수학 교재 24권 개발</li>
           <li>입학 테스트·성취도 평가지 36종 개발</li>
           <li>학습 교재 회원 수 162%, 학원용 교재 과목 수 159% 달성</li>
         </ul>
@@ -680,12 +685,13 @@ footer{
         <h3>현장</h3>
         <ul>
           <li>초·중등 방과 후·캠프 강의 진행</li>
-          <li>교구 검수 및 부자재 제작 (PCB·3D 프린팅)</li>
+          <li>교구 검수와 개선 방향 전달 (PCB·3D 프린팅)</li>
         </ul>
       </section>
       <section>
         <h3>자격</h3>
         <ul>
+          <li>CS Leaders(관리사) · 2026</li>
           <li>AICE Basic · 2023</li>
           <li>중등학교 2급 정교사 (수학) · 2016</li>
         </ul>
@@ -744,14 +750,13 @@ footer{
       <div class="contact-links">
         <a class="btn" href="mailto:kwangjin.owl@gmail.com">메일 보내기</a>
         <a class="btn ghost" href="https://github.com/kwangjin-owl" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn ghost" href="./portfolio.pdf">포트폴리오 PDF</a>
       </div>
     </div>
 
     <footer>
       <span class="code">김광진</span>
       <span class="code" id="upd"></span>
-      <span class="code">build 15 · <span id="yr"></span></span>
+      <span class="code">build 26 · <span id="yr"></span></span>
     </footer>
   </section>
 
