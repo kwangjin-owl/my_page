@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI로 만든 업무 도구 | 김광진</title>
+<meta name="description" content="문항 원고를 데이터 시트에 자동으로 채우고, 연산 문항과 이미지 파일명을 한꺼번에 처리하려고 처음 만든 도구 세 가지." />
+<meta property="og:title" content="AI로 만든 업무 도구 | 김광진" />
+<meta property="og:description" content="문항 원고를 데이터 시트에 자동으로 채우고, 연산 문항과 이미지 파일명을 한꺼번에 처리하려고 처음 만든 도구 세 가지." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <a class="mark-name" href="../index.html">김광진<span>.</span></a>
+    <div class="topbar-contact"><a href="mailto:kwangjin.owl@gmail.com">kwangjin.owl@gmail.com</a></div>
+  </div>
+</div>
+
+<main class="shell detail">
+  <a class="back" href="../index.html">← 프로젝트 모음</a>
+  <h1>AI로 만든 업무 도구</h1>
+  <p class="lede">문항을 만들 때는 원고를 쓰는 것으로 끝나지 않습니다. 원고에 적은 문제 유형, 난이도, 표준분류체계 같은 정보를 서비스에 올릴 데이터 양식에 다시 옮겨 넣어야 합니다. AI가 업무에 널리 쓰이기 전까지는 이 일을 사람이 하나씩 했고, 저도 그렇게 해 왔습니다.</p>
+  <p class="lede">에누마코리아에서 특수교육 AI 디지털교과서의 수학 콘텐츠를 만들면서, 처음으로 이런 일을 처리할 도구를 AI의 도움을 받아 직접 만들었습니다. Apps Script를 써 본 것도, 코드로 도구를 만든 것도 이때가 처음입니다.</p>
+    <div class="row c2 hero-row">
+      <figure class="m-card">
+        <div class="m-stage" style="height:420px"><img src="../assets/tools/generator.jpg" alt="연산 문항 생성기" loading="lazy" /></div>
+        <figcaption>연산 문항 생성기: 덧셈·받아올림 한 번·두 자리 수, 정답 빈칸으로 10문제를 만든 화면</figcaption>
+      </figure>
+      <figure class="m-card">
+        <div class="m-stage" style="height:420px"><img src="../assets/tools/filename.jpg" alt="이미지 파일명 도구" loading="lazy" /></div>
+        <figcaption>이미지 파일명 도구 첫 화면</figcaption>
+      </figure>
+    </div>
+  <dl class="info">
+    <dt>구분</dt><dd>회사 · 에누마코리아 · 특수교육 AI 디지털교과서</dd>
+    <dt>역할</dt><dd>원고 템플릿 설계, 원고를 데이터 시트로 옮기는 Apps Script 작성, 연산 문항 생성기와 이미지 파일명 도구 제작. 코드는 AI의 도움을 받아 작성</dd>
+    <dt>기간</dt><dd>2025</dd>
+    <dt>도구</dt><dd>ChatGPT · Google Apps Script · Claude Code</dd>
+    <dt>결과</dt><dd>문항 380개를 데이터 시트에 한 번에 입력 · 연산 문항 생성기 · 이미지 파일명 도구</dd>
+  </dl>
+
+
+  <section class="part">
+    <h2>원고에서 데이터 시트까지</h2>
+    <p>동물 퀴즈와 평가 문항 380개를 만들 때는, 처음부터 데이터 시트에 자동으로 넣을 생각으로 원고 템플릿을 데이터 시트와 같은 칸으로 짰습니다. 팀에서는 이 템플릿과 교과서·성취기준·표준분류체계 자료를 ChatGPT에 주고 단원별 초안을 받은 뒤, 서로 검수해 원고를 완성했습니다. 완성된 원고는 제가 짠 Apps Script로 데이터 시트에 옮겼습니다.</p>
+    <div class="row c1">
+      <figure class="m-card">
+        <div class="m-stage" style="height:548px"><img src="../assets/tools/manuscript.jpg" alt="동물 퀴즈 원고" loading="lazy" /></div>
+        <figcaption>원고: 칸마다 데이터 시트의 항목 이름을 붙인 동물 퀴즈 원고 한 쪽</figcaption>
+      </figure>
+    </div>
+    <div class="row c1">
+      <figure class="m-card">
+        <div class="m-stage" style="height:176px"><img src="../assets/tools/datasheet.jpg" alt="데이터 시트" loading="lazy" /></div>
+        <figcaption>데이터 시트: 같은 문항이 들어간 줄</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="part">
+    <h2>연산 문항 생성기</h2>
+    <p>연산 스테이지에는 받아올림 횟수나 수의 범위만 조금씩 다른 문제가 많이 필요했습니다. 생성기에서 사칙연산과 수의 범위, 받아올림·받아내림 횟수(1~5회), 빈칸 자리(앞·뒤·정답)를 고르면 그 조건에 맞는 문항과 정답이 원하는 개수만큼 나오고, CSV로 바로 복사됩니다. 조건을 조금씩 바꿔 가며 단계별 스테이지를 채웠습니다.</p>
+  </section>
+  <section class="part">
+    <h2>이미지 파일명 도구</h2>
+    <p>특수교육원에서 받은 교과서 삽화는 디자이너가 크기를 맞춘 뒤, 파일명을 규칙에 맞게 모두 바꿔야 쓸 수 있었습니다. 그래서 엑셀에 지금 파일명과 바꿀 파일명을 적어 이미지와 함께 넣으면 한꺼번에 바뀌게 했습니다. 같은 삽화를 크기만 달리해 여러 액티비티에 쓰는 일도 많아서, 같은 그림끼리 찾아 짝지은 뒤 이름을 바꾸는 기능도 넣었습니다. 짝을 찾는 방식은 파일명, 그림 유사도, 순서 세 가지를 두어 이름 규칙이 무너진 자료도 대조할 수 있게 했습니다. 처음에는 서버가 있어야 돌아갔는데, 파일 하나만 복사하면 누구나 쓸 수 있도록 고쳤습니다.</p>
+  </section>
+
+</main>
+
+<div class="shell">
+  <footer>
+    <span class="code">김광진 · 프로젝트 모음</span>
+    <span class="code">updated 2026.11</span>
+    <span class="code">build 31</span>
+  </footer>
+</div>
+
+</body>
+</html>
