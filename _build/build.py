@@ -2,6 +2,7 @@
 # 쓰는 법: python3 build.py <my_page 폴더> <build 번호>
 import sys, html
 from portfolio_data import BASE, COMPANIES, BLOCKS, PAGES, NOW_MAIN, NOW_MP
+from gallery_data import GALLERY
 
 ROOT, BUILD = sys.argv[1], sys.argv[2]
 E = html.escape
@@ -62,8 +63,21 @@ def row_block(k):
             <p class="pr-res"><b>성과</b> · {E(b['result'])}</p>
             <div class="pr-act"><button class="pr-more" type="button" aria-expanded="false" aria-controls="{rid}">요약 보기</button>{more}</div>
           </div>
-          <div class="pr-body" id="{rid}"><div class="pr-txt">{bullets(b)}{lim}</div><figure class="pr-img"><img src="assets/slides/{b['img']}" alt="" loading="lazy" /></figure></div>
+          <div class="pr-body" id="{rid}"><div class="pr-txt">{bullets(b)}{lim}</div>{gallery(k)}</div>
         </div>"""
+
+# 그림 줄: 같은 줄은 높이를 맞추고(너비를 가로세로 비율로 나눔), 원본보다 크게 늘리지 않는다
+# 한 블록 안의 줄은 높이를 같게 한다(한 장만 남은 줄이 혼자 커지지 않게). 펼친 칸 안쪽 너비는 약 930px
+GAL_HMAX, GAL_W = 340, 930
+def gallery(k):
+    rows=[]; R=GALLERY[k]
+    H=min([GAL_HMAX]+[(GAL_W-10*(len(r)-1))/sum(w/h for _,w,h in r) for r in R]+[h for r in R for _,_,h in r])
+    for row in R:
+        ars=[w/h for _,w,h in row]
+        maxw=round(sum(ars)*H+10*(len(row)-1))
+        figs="".join(f'<figure style="flex:{w/h:.3f} 1 0"><img src="assets/blocks/{f}" width="{w}" height="{h}" alt="" loading="lazy" /></figure>' for f,w,h in row)
+        rows.append(f'<div class="gr" style="max-width:{maxw}px">{figs}</div>')
+    return f'<div class="pr-gal">{"".join(rows)}</div>'
 
 def row_now(c):
     return f"""
