@@ -144,18 +144,18 @@ PAGES = [
 NOW_MAIN = dict(href="projects/menu.html", img="assets/menu/hero_1029.jpg", kind="개인", period="2026.08~11",
     title="AI 메뉴판 편집기",
     line="메뉴판 사진을 올리면 AI가 메뉴를 읽어 새 메뉴판을 만들고, 사장님이 직접 고쳐 인쇄하는 웹 도구",
-    result="9월 7일부터 지인 가게에서 인쇄해 사용 중")
+    result="9월 7일부터 지인 가게에서 인쇄해 사용 중", res_label="성과")
 NOW_MP = [
   dict(href="projects/mp1-senior-exam.html", img="assets/mp1/img.jpg", kind="부트캠프 미니 프로젝트 · MP1", period="2026.08.19~20",
        title="시니어 자격증 접수와 질문 챗봇", line="어르신이 자격증 필기시험을 접수하고 궁금한 것을 물어보는 웹 서비스",
-       result="상담 기록 4,705건을 답변 2,495개로 정리해, 질문 40개 중 36개에 맞게 답함"),
+       result="상담 기록 4,705건을 답변 2,495개로 정리해, 질문 40개 중 36개에 맞게 답함", res_label="성과"),
   dict(href="projects/mp2-booking-wait.html", img="assets/mp2/img2.jpg", kind="부트캠프 미니 프로젝트 · MP2", period="2026.09.07~08",
        title="상담 예약 확정 대기 화면", line="받은 예약 앱의 규칙은 그대로 두고, 관리자 확정을 기다리는 고객 화면만 고친 작업",
-       result="예약 서비스 17곳 중 확정 대기 화면이 있는 6곳을 비교해 3곳의 방식을 가져옴"),
+       result="예약 서비스 17곳 중 확정 대기 화면이 있는 6곳을 비교해 3곳의 방식을 가져옴", res_label="한 일"),
   dict(href="projects/mp3-workbook-compare.html", img="assets/mp3/img4.jpg", kind="부트캠프 실습 미션 · MP3", period="2026.09.28~30",
        title="초등 수학 문제집 비교", line="알라딘 주간 베스트 50권에서 수학 문제집을 골라 나란히 보여 주고 AI가 한 권을 추천하는 화면",
-       result="수학 문제집 31권 비교 화면 · AI 추천 · 이용 측정 이벤트 3개"),
+       result="수학 문제집 31권 비교 화면 · AI 추천 · 이용 측정 이벤트 3개", res_label="만든 것"),
   dict(href="projects/mp4-shop-helpdesk.html", img="assets/mp4/img1.jpg", kind="부트캠프 실습 미션 · MP4", period="2026.10.30~11.03",
        title="쇼핑몰 고객센터 상담봇", line="손님 질문에 안내문을 찾아 답하고, 답할 수 없는 질문은 사장님에게 넘기는 고객센터",
-       result="손님 상담 화면 · 사장님 관리 화면 · 평가 점수표"),
+       result="손님 상담 화면 · 사장님 관리 화면 · 평가 점수표", res_label="만든 것"),
 ]

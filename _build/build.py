@@ -59,10 +59,10 @@ def row_block(k):
           <span class="pr-pd">{pd_full(b['period'])}</span>
           <div class="pr-main">
             <h4>{E(b['title'])}</h4>
-            <p class="pr-res">{E(b['result'])}</p>
+            <p class="pr-res"><b>성과</b> · {E(b['result'])}</p>
             <div class="pr-act"><button class="pr-more" type="button" aria-expanded="false" aria-controls="{rid}">요약 보기</button>{more}</div>
-            <div class="pr-body" id="{rid}"><div class="pr-txt">{bullets(b)}{lim}</div><figure class="pr-img"><img src="assets/slides/{b['img']}" alt="" loading="lazy" /></figure></div>
           </div>
+          <div class="pr-body" id="{rid}"><div class="pr-txt">{bullets(b)}{lim}</div><figure class="pr-img"><img src="assets/slides/{b['img']}" alt="" loading="lazy" /></figure></div>
         </div>"""
 
 def row_now(c):
@@ -72,7 +72,7 @@ def row_now(c):
           <div class="pr-main">
             <h4>{E(c['title'])} <span class="pr-kind">{E(c['kind'])}</span></h4>
             <p class="pr-line">{E(c['line'])}</p>
-            <p class="pr-res">{E(c['result'])}</p>
+            <p class="pr-res"><b>{E(c['res_label'])}</b> · {E(c['result'])}</p>
             <div class="pr-act"><a class="pr-link" href="{c['href']}">자세히 보기 →</a></div>
           </div>
         </div>"""
@@ -301,7 +301,7 @@ mp="".join(f'''
       <div class="mp-img"><img src="{c['img']}" alt="" /></div>
       <span class="mp-kind">{E(c['kind'])} · {E(c['period'])}</span>
       <h3>{E(c['title'])}</h3>
-      <p>{E(c['result'])}</p>
+      <p><b>{E(c['res_label'])}</b> · {E(c['result'])}</p>
       <span class="mp-more">자세히 보기 →</span>
     </a>''' for c in NOW_MP)
 pages.append(f'''
