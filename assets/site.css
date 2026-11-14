@@ -237,40 +237,53 @@ footer{
   .bridge-arrow{ text-align:left; margin:4px 0; }
 }
 
-/* 회사별 묶음과 항목(PDF 한 쪽 = 항목 하나) */
-.co{ margin-top:30px; }
-.co-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding-bottom:8px; border-bottom:1px solid var(--rule); }
-.co-head h3{ font-family:var(--serif); font-size:20px; }
-.co-head span{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); }
-.item{ display:grid; grid-template-columns:240px minmax(0,1fr); gap:20px; padding:18px 0; border-bottom:1px solid var(--rule); }
-.it-thumb{ display:block; aspect-ratio:16/10; background:var(--stage); border:1px solid var(--rule); border-radius:8px; overflow:hidden; }
-.it-thumb img{ width:100%; height:100%; object-fit:cover; object-position:top; }
-.item.has-detail .it-thumb:hover{ border-color:var(--ink-soft); }
-.it-row + .it-row{ margin-top:12px; }
-.it-row h3{ display:inline; font-size:15.5px; line-height:1.5; }
-.it-pd{ margin-left:8px; font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); white-space:nowrap; }
-.it-res{ margin:4px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink-soft); }
-.it-res::before{ content:"성과 · "; color:var(--pen); font-weight:600; }
-.it-act{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; }
-.it-act .btn{ padding:8px 14px; font-size:13px; }
-.it-pdf{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); }
-.it-more{ margin-top:10px; }
-.it-more summary{ cursor:pointer; font-size:13px; color:var(--ink-soft); width:max-content; }
-.it-more summary:hover{ color:var(--pen); }
-.it-more[open] summary{ margin-bottom:6px; }
-.it-blk{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.9fr); gap:16px; margin-top:12px; padding:14px 16px; background:var(--card); border:1px solid var(--rule); border-radius:10px; }
-.it-blk h4{ margin:0; font-size:14px; }
-.it-blk-img{ margin:0; display:flex; align-items:center; justify-content:center; background:var(--stage); border-radius:6px; padding:8px; }
-.it-blk-img img{ max-width:100%; height:auto; }
-.bl{ list-style:none; margin:8px 0 0; padding:0; }
+/* build 40: 흐름 탭 — 경로 마디 아래 프로젝트 줄. 기간은 왼쪽 고정 폭 */
+.tabs{ display:flex; gap:6px; border-bottom:1px solid var(--rule); margin-top:clamp(36px,5vw,52px); }
+.tab{ padding:11px 16px 10px; font-size:14.5px; color:var(--ink-soft); text-decoration:none; border-bottom:2px solid transparent; margin-bottom:-1px; }
+.tab:hover{ color:var(--ink); }
+.tab[aria-selected="true"]{ color:var(--ink); font-weight:600; border-color:var(--pen); }
+.tab:focus-visible{ outline:2px solid var(--pen); outline-offset:2px; }
+.view{ padding-top:clamp(28px,4vw,40px); }
+.view .group-head{ border-top:0; padding-top:0; }
+.view-note{ font-size:13.5px !important; }
+.bridge-head-wrap{ margin-top:clamp(56px,7vw,76px); border-top:1.5px solid var(--ink) !important; padding-top:20px !important; }
+.prj{ margin-top:14px; border-top:1px solid var(--rule); max-width:860px; }
+.pr{ display:grid; grid-template-columns:136px minmax(0,1fr); gap:4px 18px; padding:14px 0; border-bottom:1px solid var(--rule); }
+.pr-pd{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); padding-top:3px; white-space:nowrap; }
+.pr-main h4{ margin:0; font-size:15.5px; line-height:1.5; }
+.pr-kind{ margin-left:6px; font-family:var(--mono); font-size:11px; font-weight:400; color:var(--pen); }
+.pr-line{ margin:3px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink-soft); }
+.pr-res{ margin:3px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink-soft); }
+.pr-res::before{ content:"성과 · "; color:var(--pen); font-weight:600; }
+.pr-act{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 18px; margin-top:8px; }
+.pr-more, .pr-link{ font:inherit; font-size:13px; padding:0; border:0; background:none; cursor:pointer; text-decoration:none; }
+.pr-more{ color:var(--ink-soft); border-bottom:1px dotted var(--ink-soft); }
+.pr-more::after{ content:" ▾"; }
+.pr-more[aria-expanded="true"]::after{ content:" ▴"; }
+.pr-more:hover{ color:var(--ink); }
+.pr-link{ color:var(--pen); font-weight:600; }
+.pr-link:hover{ text-decoration:underline; }
+.pr-more:focus-visible, .pr-link:focus-visible{ outline:2px solid var(--pen); outline-offset:3px; }
+.pr-body{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.9fr); gap:16px; margin-top:12px; padding:14px 16px; background:var(--card); border:1px solid var(--rule); border-radius:10px; }
+.pr-body[hidden]{ display:none; }
+.pr-img{ margin:0; display:flex; align-items:center; justify-content:center; background:var(--stage); border-radius:6px; padding:8px; }
+.pr-img img{ max-width:100%; height:auto; }
+.bl{ list-style:none; margin:0; padding:0; }
 .bl li{ position:relative; font-size:13.5px; line-height:1.6; }
 .bl .lv1{ padding-left:14px; margin-top:5px; }
+.bl .lv1:first-child{ margin-top:0; }
 .bl .lv1::before{ content:"•"; position:absolute; left:2px; }
 .bl .lv2{ padding-left:30px; color:var(--ink-soft); font-size:13px; }
 .bl .lv2::before{ content:"–"; position:absolute; left:16px; }
 .it-lim{ margin:10px 0 0; font-size:13px; font-weight:600; color:var(--pen); }
-.it-note{ margin:8px 0 0; font-size:12px; color:var(--ink-soft); }
+.node{ padding-bottom:46px; }
 @media (max-width:720px){
-  .item{ grid-template-columns:1fr; gap:12px; }
-  .it-blk{ grid-template-columns:1fr; }
+  .pr{ grid-template-columns:1fr; gap:2px; }
+  .pr-body{ grid-template-columns:1fr; }
 }
+
+/* build 40: 그림 한 장 줄은 카드를 그림 너비에 맞춘다(양옆 빈 띠 없앰). 영상 카드는 그대로 */
+.row.c1 > .m-card:not(.is-video){ width:fit-content; max-width:100%; margin-inline:auto; }
+.row.c1 > .m-card:not(.is-video) .m-stage{ width:fit-content; max-width:100%; }
+.row.c1 > .m-card:not(.is-video) .m-stage img{ height:100%; width:auto; max-width:100%; object-fit:contain; }
+@media (max-width:560px){ .row.c1 > .m-card:not(.is-video) .m-stage img{ height:auto; } }
