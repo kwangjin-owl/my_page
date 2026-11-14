@@ -67,14 +67,17 @@ def row_block(k):
         </div>"""
 
 # 그림 줄: 같은 줄은 높이를 맞추고(너비를 가로세로 비율로 나눔), 원본보다 크게 늘리지 않는다
-# 한 블록 안의 줄은 높이를 같게 한다(한 장만 남은 줄이 혼자 커지지 않게). 펼친 칸 안쪽 너비는 약 930px
-GAL_HMAX, GAL_W = 340, 930
+# 그림 칸(글 오른쪽 420px): 슬라이드처럼 겹치지 않게 2~3장씩 줄로 놓는다.
+# 6장 이상이면 한 줄에 3장, 아니면 2장. 한 블록 안의 줄은 높이를 같게 하고, 원본보다 크게 늘리지 않는다
+GAL_W, GAP = 404, 6
 def gallery(k):
-    rows=[]; R=GALLERY[k]
-    H=min([GAL_HMAX]+[(GAL_W-10*(len(r)-1))/sum(w/h for _,w,h in r) for r in R]+[h for r in R for _,_,h in r])
+    imgs=[x for r in GALLERY[k] for x in r]
+    per = 3 if len(imgs)>=6 else (1 if len(imgs)==1 else 2)
+    R=[imgs[i:i+per] for i in range(0,len(imgs),per)]
+    H=min([(GAL_W-GAP*(len(r)-1))/sum(w/h for _,w,h in r) for r in R if len(r)==per or len(R)==1]+[h for _,_,h in imgs])
+    rows=[]
     for row in R:
-        ars=[w/h for _,w,h in row]
-        maxw=round(sum(ars)*H+10*(len(row)-1))
+        maxw=round(sum(w/h for _,w,h in row)*H+GAP*(len(row)-1))
         figs="".join(f'<figure style="flex:{w/h:.3f} 1 0"><img src="assets/blocks/{f}" width="{w}" height="{h}" alt="" loading="lazy" /></figure>' for f,w,h in row)
         rows.append(f'<div class="gr" style="max-width:{maxw}px">{figs}</div>')
     return f'<div class="pr-gal">{"".join(rows)}</div>'
@@ -153,7 +156,6 @@ HEAD = f"""<!doctype html>
 <link rel="stylesheet" href="assets/site.css" />
 </head>"""
 
-proj_cards = [CO_CARDS[0], CO_CARDS[1], CO_CARDS[2]] + NOW_ORDER
 
 index = f"""{HEAD}
 <body>
@@ -199,12 +201,24 @@ index = f"""{HEAD}
   </section>
 
   <section class="view" id="projects" role="tabpanel" aria-labelledby="tab-projects">
-    <div class="group-head">
-      <span class="eyebrow">Projects</span>
-      <h2>프로젝트로 보기</h2>
-      <p>화면과 과정을 따로 정리한 프로젝트만 모았습니다. 흐름 탭의 「자세히 보기」와 같은 페이지입니다. 시작한 순서로 놓았습니다.</p>
+    <div class="group-head grp">
+      <span class="eyebrow">Now · 2026</span>
+      <h2>지금: AI로 기획하고 직접 만든 것</h2>
+      <p>회사를 나온 뒤 기획부터 배포까지 직접 해 본 작업입니다. 개인 작업 하나와 부트캠프 미니 프로젝트·실습 미션 넷입니다.</p>
     </div>
-    <div class="cards pair">{''.join(card(c) for c in proj_cards)}
+    <div class="cards feature">{card(NOW_MAIN)}
+    </div>
+    <div class="cards pair">{''.join(card(c) for c in NOW_MP)}
+    </div>
+
+    <div class="group-head grp">
+      <span class="eyebrow">Work · 2016–2025</span>
+      <h2>회사에서: 콘텐츠와 그 구조</h2>
+      <p>10년 경력 가운데 화면과 과정을 보여 드릴 수 있는 셋입니다. 회사별 경력 전체는 흐름 탭과 PDF에 있습니다.</p>
+    </div>
+    <div class="cards feature">{card(CO_CARDS[1])}
+    </div>
+    <div class="cards pair">{card(CO_CARDS[0])}{card(CO_CARDS[2])}
     </div>
   </section>
 
