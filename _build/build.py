@@ -163,7 +163,11 @@ index = f"""{HEAD}
 <div class="topbar">
   <div class="shell topbar-in">
     <a class="mark-name" href="index.html">김광진<span>.</span></a>
-    <div class="topbar-contact"><a href="mailto:kwangjin.owl@gmail.com">kwangjin.owl@gmail.com</a> · <a href="docs/portfolio.pdf">PDF</a></div>
+    <div class="topbar-act">
+      <a class="btn sm" href="mailto:kwangjin.owl@gmail.com">메일 보내기</a>
+      <a class="btn ghost sm" href="docs/portfolio.pdf">PDF로 받기 <small>11쪽</small></a>
+      <a class="btn ghost sm" href="https://github.com/kwangjin-owl" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
 </div>
 
@@ -172,7 +176,6 @@ index = f"""{HEAD}
     <span class="eyebrow">Portfolio</span>
     <h1>학습 콘텐츠와 구조를<br />함께 설계해 온 10년 차 기획자</h1>
     <p>10년 동안 학습 서비스의 콘텐츠를 기획하고, 그 콘텐츠를 서비스 안에서 찾고 추천할 수 있도록 커리큘럼·메타데이터·지식맵을 설계했습니다. 지금은 AI를 활용해 웹 서비스를 기획하고 만들어 보고 있습니다.</p>
-    <div class="intro-act"><a class="btn ghost" href="docs/portfolio.pdf">PDF로 받기 <small>11쪽</small></a></div>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="보기 방식">
@@ -202,16 +205,6 @@ index = f"""{HEAD}
 
   <section class="view" id="projects" role="tabpanel" aria-labelledby="tab-projects">
     <div class="group-head grp">
-      <span class="eyebrow">Now · 2026</span>
-      <h2>지금: AI로 기획하고 직접 만든 것</h2>
-      <p>회사를 나온 뒤 기획부터 배포까지 직접 해 본 작업입니다. 개인 작업 하나와 부트캠프 미니 프로젝트·실습 미션 넷입니다.</p>
-    </div>
-    <div class="cards feature">{card(NOW_MAIN)}
-    </div>
-    <div class="cards pair">{''.join(card(c) for c in NOW_MP)}
-    </div>
-
-    <div class="group-head grp">
       <span class="eyebrow">Work · 2016–2025</span>
       <h2>회사에서: 콘텐츠와 그 구조</h2>
       <p>10년 경력 가운데 화면과 과정을 보여 드릴 수 있는 셋입니다. 회사별 경력 전체는 흐름 탭과 PDF에 있습니다.</p>
@@ -220,6 +213,16 @@ index = f"""{HEAD}
     </div>
     <div class="cards pair">{card(CO_CARDS[0])}{card(CO_CARDS[2])}
     </div>
+
+    <div class="group-head grp">
+      <span class="eyebrow">Now · 2026</span>
+      <h2>지금: AI로 기획하고 직접 만든 것</h2>
+      <p>회사를 나온 뒤 기획부터 배포까지 직접 해 본 작업입니다. 개인 작업 하나와 부트캠프 미니 프로젝트·실습 미션 넷입니다.</p>
+    </div>
+    <div class="cards feature">{card(NOW_MAIN)}
+    </div>
+    <div class="cards pair">{''.join(card(c) for c in NOW_MP)}
+    </div>
   </section>
 
   <section class="closing">
@@ -227,11 +230,6 @@ index = f"""{HEAD}
     <h2>만드는 쪽과 굴리는 쪽, 양쪽을 아는 자리에서 일하고 싶습니다.</h2>
     <p>콘텐츠를 잘 만드는 일과, 그 콘텐츠가 서비스 위에서 제대로 동작하게 하는 일은 서로 다른 일이었습니다. 10년 동안 그 사이에 있었습니다.</p>
     <p>학습이나 콘텐츠가 제품의 중심에 있는 곳에서, 콘텐츠와 서비스 양쪽을 아는 사람이 필요한 자리를 찾고 있습니다. 콘텐츠를 만들어 본 사람이 기획하는 자리에 있으면, 실제로 만들 수 있는 형태로 정할 수 있다고 생각합니다.</p>
-    <div class="end-link" style="border-top:0;margin-top:26px;padding-top:0">
-      <a class="btn" href="mailto:kwangjin.owl@gmail.com">메일 보내기</a>
-      <a class="btn ghost" href="docs/portfolio.pdf">PDF로 받기</a>
-      <a class="btn ghost" href="https://github.com/kwangjin-owl" target="_blank" rel="noopener">GitHub</a>
-    </div>
   </section>
 </main>
 

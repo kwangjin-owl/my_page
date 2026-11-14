@@ -61,6 +61,11 @@ img, video{ display:block; }
 .topbar-contact a{ text-decoration:none; color:var(--ink-soft); white-space:nowrap; }
 .topbar-contact a:hover{ color:var(--pen); }
 @media (max-width:420px){ .topbar-contact{ display:none; } }
+/* build 44: 첫 화면 버튼(메일·PDF·GitHub)은 상단 바 오른쪽에만 */
+.topbar-act{ margin-left:auto; align-self:center; display:flex; gap:8px; }
+.btn.sm{ padding:6px 12px; font-size:13px; gap:6px; white-space:nowrap; }
+.btn.sm small{ font-size:11px; }
+@media (max-width:560px){ .topbar-act{ gap:6px; } .btn.sm{ padding:5px 9px; font-size:12px; } .btn.sm small{ display:none; } }
 
 /* ── 첫 화면 ── */
 .intro{ padding:clamp(52px, 9vw, 96px) 0 clamp(30px, 4vw, 44px); }
